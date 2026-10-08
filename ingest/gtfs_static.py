@@ -38,12 +38,24 @@ def ensure_gtfs(cache_dir: Path, max_age_hours: float = 20.0, url: str = GTFS_UR
     if stale:
         log.info("downloading %s", url)
         t0 = time.perf_counter()
-        with requests.get(url, stream=True, timeout=180) as resp:
-            resp.raise_for_status()
-            tmp = zip_path.with_suffix(".part")
-            with open(tmp, "wb") as fh:
-                for chunk in resp.iter_content(1 << 20):
-                    fh.write(chunk)
+        headers = {"User-Agent": "4NextDart/1.0 (https://github.com/ZarleyLtd/4NextDart)"}
+        tmp = zip_path.with_suffix(".part")
+        last_exc: Exception | None = None
+        for attempt in range(3):
+            try:
+                with requests.get(url, stream=True, timeout=180, headers=headers) as resp:
+                    resp.raise_for_status()
+                    with open(tmp, "wb") as fh:
+                        for chunk in resp.iter_content(1 << 20):
+                            fh.write(chunk)
+                last_exc = None
+                break
+            except requests.RequestException as exc:
+                last_exc = exc
+                log.warning("GTFS download attempt %d failed: %s", attempt + 1, exc)
+                time.sleep(5 * (attempt + 1))
+        if last_exc:
+            raise last_exc
         os.replace(tmp, zip_path)
         log.info("downloaded %.0f MB in %.1fs", zip_path.stat().st_size / 1e6, time.perf_counter() - t0)
         for p in out_dir.glob("*.txt"):
