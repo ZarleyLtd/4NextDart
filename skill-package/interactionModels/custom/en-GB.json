@@ -1,0 +1,644 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "four next dart",
+      "intents": [
+        {
+          "name": "NextDartIntent",
+          "slots": [
+            {
+              "name": "station",
+              "type": "DART_STATION"
+            },
+            {
+              "name": "direction",
+              "type": "DART_DIRECTION"
+            }
+          ],
+          "samples": [
+            "from {station} {direction}",
+            "from {station} towards {direction}",
+            "from {station} toward {direction}",
+            "from {station} to {direction}",
+            "{station} towards {direction}",
+            "{station} to {direction}",
+            "{direction} from {station}",
+            "{station} {direction}",
+            "{direction}",
+            "to get trains from {station} {direction}",
+            "to get the next train from {station} {direction}",
+            "to get the next dart from {station} {direction}",
+            "trains from {station} {direction}",
+            "dart from {station} {direction}",
+            "the next train from {station} {direction}",
+            "the next dart from {station} {direction}",
+            "when is the next train from {station} {direction}",
+            "when is the next dart from {station} {direction}",
+            "what's the next train from {station} {direction}",
+            "next train from {station} {direction}",
+            "next dart from {station} {direction}",
+            "from {station} going {direction}",
+            "from {station} heading {direction}",
+            "{station} going {direction}",
+            "{station} heading {direction}",
+            "from station {station} {direction}",
+            "next train",
+            "next trains",
+            "next dart",
+            "the next train",
+            "the next dart",
+            "for the next train",
+            "for the next dart",
+            "when is the next train",
+            "when is my next train",
+            "what's the next train",
+            "what time is the next train",
+            "from my favourite stop",
+            "from my stop",
+            "for my stop",
+            "trains from my favourite stop",
+            "the next train from my favourite stop"
+          ]
+        },
+        {
+          "name": "NextDartQueryIntent",
+          "slots": [
+            {
+              "name": "query",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "for {query}",
+            "from {query}",
+            "about {query}",
+            "trains from {query}",
+            "dart from {query}",
+            "the next train from {query}",
+            "the next dart from {query}",
+            "next train from {query}",
+            "from station {query}",
+            "to get trains from {query}"
+          ]
+        },
+        {
+          "name": "SetFavouriteStopIntent",
+          "slots": [
+            {
+              "name": "station",
+              "type": "DART_STATION"
+            },
+            {
+              "name": "direction",
+              "type": "DART_DIRECTION"
+            }
+          ],
+          "samples": [
+            "to set my favourite stop to {station}",
+            "set my favourite stop to {station}",
+            "set my favourite stop to {station} {direction}",
+            "set favourite stop {station} {direction}",
+            "set my favourite stop",
+            "to set my favourite stop",
+            "to set my favorite stop",
+            "set my favorite stop",
+            "change my favourite stop to {station}",
+            "to change my favourite stop to {station}",
+            "change my favourite stop to {station} {direction}",
+            "make {station} my favourite stop",
+            "make {station} {direction} my favourite",
+            "remember {station}",
+            "to remember {station} {direction}",
+            "save {station}",
+            "to save {station} as my favourite",
+            "my stop is {station}",
+            "my stop is {station} {direction}",
+            "to set my favorite stop to {station}",
+            "set my favorite stop to {station}",
+            "to set my favourite stop to {station} {direction}",
+            "to set my favorite stop to {station} {direction}"
+          ]
+        },
+        {
+          "name": "SetFavouriteQueryIntent",
+          "slots": [
+            {
+              "name": "query",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "to set my favourite stop to {query}",
+            "set my favourite stop to {query}",
+            "to set my favorite stop to {query}",
+            "set my favorite stop to {query}",
+            "remember {query}",
+            "to remember {query}"
+          ]
+        },
+        {
+          "name": "GetFavouriteStopIntent",
+          "slots": [],
+          "samples": [
+            "for my favourite stop",
+            "what is my favourite stop",
+            "what's my favourite stop",
+            "which stop is my favourite",
+            "to remind me of my favourite stop",
+            "what stop is saved",
+            "for my favorite stop",
+            "what is my favorite stop"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "DART_STATION",
+          "values": [
+            {
+              "name": {
+                "value": "Bayside",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Blackrock",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Booterstown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Bray",
+                "synonyms": [
+                  "Bray (Daly)",
+                  "Bray Daly",
+                  "bray daly",
+                  "daly"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Clongriffin",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Clontarf Road",
+                "synonyms": [
+                  "clontarf"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Connolly",
+                "synonyms": [
+                  "connolly station",
+                  "dublin connolly"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Dalkey",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Dun Laoghaire",
+                "synonyms": [
+                  "Dun Laoghaire (Mallin)",
+                  "Dun Laoghaire Mallin",
+                  "dunleary",
+                  "dun laoire",
+                  "mallin"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Glenageary",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Grand Canal Dock",
+                "synonyms": [
+                  "grand canal",
+                  "gcd"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Greystones",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Harmonstown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Howth",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Howth Junction",
+                "synonyms": [
+                  "Howth Junction and Donaghmede",
+                  "donaghmede"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Kilbarrack",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Killester",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Killiney",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lansdowne",
+                "synonyms": [
+                  "Lansdowne Road",
+                  "lansdowne rd",
+                  "aviva",
+                  "aviva stadium"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Malahide",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pearse",
+                "synonyms": [
+                  "Dublin Pearse",
+                  "pearse station",
+                  "dublin pearse",
+                  "pearse street",
+                  "westland row"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Portmarnock",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Raheny",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Salthill",
+                "synonyms": [
+                  "Salthill and Monkstown",
+                  "monkstown"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Sandycove",
+                "synonyms": [
+                  "Sandycove and Glasthule",
+                  "glasthule"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Sandymount",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Seapoint",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Shankill",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Sutton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Sydney Parade",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tara Street",
+                "synonyms": [
+                  "tara",
+                  "tara st"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Woodbrook",
+                "synonyms": []
+              }
+            }
+          ]
+        },
+        {
+          "name": "DART_DIRECTION",
+          "values": [
+            {
+              "name": {
+                "value": "northbound",
+                "synonyms": [
+                  "north",
+                  "north bound",
+                  "going north",
+                  "heading north",
+                  "going northbound"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "southbound",
+                "synonyms": [
+                  "south",
+                  "south bound",
+                  "going south",
+                  "heading south",
+                  "going southbound"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "the city",
+                "synonyms": [
+                  "city",
+                  "city centre",
+                  "city center",
+                  "into town",
+                  "town",
+                  "towards the city",
+                  "toward the city",
+                  "to the city"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Howth",
+                "synonyms": [
+                  "towards Howth",
+                  "toward Howth",
+                  "to Howth"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Malahide",
+                "synonyms": [
+                  "towards Malahide",
+                  "toward Malahide",
+                  "to Malahide"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Bray",
+                "synonyms": [
+                  "towards Bray",
+                  "toward Bray",
+                  "to Bray"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Greystones",
+                "synonyms": [
+                  "towards Greystones",
+                  "toward Greystones",
+                  "to Greystones"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Howth Junction",
+                "synonyms": [
+                  "towards Howth Junction",
+                  "toward Howth Junction",
+                  "to Howth Junction"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Grand Canal Dock",
+                "synonyms": [
+                  "towards Grand Canal Dock",
+                  "toward Grand Canal Dock",
+                  "to Grand Canal Dock"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Dun Laoghaire",
+                "synonyms": [
+                  "towards Dun Laoghaire",
+                  "toward Dun Laoghaire",
+                  "to Dun Laoghaire"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Connolly",
+                "synonyms": [
+                  "towards Connolly",
+                  "toward Connolly",
+                  "to Connolly"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Pearse",
+                "synonyms": [
+                  "towards Pearse",
+                  "toward Pearse",
+                  "to Pearse"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Lansdowne Road",
+                "synonyms": [
+                  "towards Lansdowne Road",
+                  "toward Lansdowne Road",
+                  "to Lansdowne Road"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "NextDartIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "station",
+              "type": "DART_STATION",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.station"
+              }
+            },
+            {
+              "name": "direction",
+              "type": "DART_DIRECTION",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.direction"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SetFavouriteStopIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "station",
+              "type": "DART_STATION",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.station"
+              }
+            },
+            {
+              "name": "direction",
+              "type": "DART_DIRECTION",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.direction"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.station",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which DART station?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What's the name of the station?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.direction",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which direction?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Northbound, southbound, towards the city, or towards Howth, Malahide, Bray, or Greystones?"
+          }
+        ]
+      }
+    ]
+  }
+}
