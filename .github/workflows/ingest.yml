@@ -2,7 +2,9 @@ name: Daily timetable ingest
 
 on:
   schedule:
-    - cron: "10 4 * * *"        # 04:10 UTC, staggered after 4NextBus at 03:40 and 4NextTram at 03:55
+    # TFI zip ~22:00-23:00 UTC. Public Actions was ~7h late on 04:10 UTC (started 11:16).
+    # Same experiment as 4NextBus (00:10): run 00:25 UTC so a 6–7h delay still lands before Irish morning peak.
+    - cron: "25 0 * * *"
   workflow_dispatch:
     inputs:
       force:

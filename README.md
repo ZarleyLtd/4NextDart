@@ -128,8 +128,10 @@ combined skills stay at one TripUpdates call per 60 seconds. The loser uses a
 cached feed if that Lambda container has one, otherwise timetable times (“scheduled”).
 Set `NTA_LOCK_TABLE` if the bus table name is not `FourNextBus`.
 
-Daily ingest in `.github/workflows/ingest.yml` runs at **04:10 UTC** (after 4NextBus
-at 03:40 and 4NextTram at 03:55).
+Daily ingest in `.github/workflows/ingest.yml` runs at **00:25 UTC** (after 4NextBus
+at 00:10). GitHub’s public `schedule` queue is often 6–7 hours late, so an overnight
+cron still usually finishes before the Irish morning peak; 04:10 UTC was landing
+around midday.
 
 ## Free tier
 
